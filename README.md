@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Resume Builder & Summarizer
+
+Welcome to the Resume Builder & Summarizer application! This application allows you to create professional resumes and generate compelling summaries with AI assistance.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Features](#features)
+  - [Resume Builder](#resume-builder)
+  - [AI-Powered Enhancements](#ai-powered-enhancements)
+  - [Voice Input](#voice-input)
+  - [PDF Export](#pdf-export)
+  - [Dynamic Updates](#dynamic-updates)
+  - [Professional Summary](#professional-summary)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Before you begin, ensure you have met the following requirements:
+- Node.js and npm installed on your machine.
+- A modern web browser.
+
+### Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/resume-builder-summarizer.git
+
+Navigate to the project directory:
+
+```sh
+cd resume-builder-summarizer
 ```
+Install the dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  ```sh
+  npm install
+  ```
+Running the Application
+Start the development server:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
+Open your web browser and navigate to http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Features
+## Resume Builder
+Create professional resumes with ease using our intuitive builder. The Resume Builder allows you to add and customize various sections of your resume, including education, experience, skills, projects, certifications, and honors.
 
-## Learn More
+## AI-Powered Enhancements
+Enhance your resume descriptions with AI-generated suggestions. Our AI-powered enhancements help you craft compelling and professional descriptions for each section of your resume.
 
-To learn more about Next.js, take a look at the following resources:
+## Voice Input
+Fill out your resume using voice commands for a seamless experience. The voice input feature allows you to dictate your resume content, making the process faster and more efficient.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## PDF Export
+Download your resume as a PDF with a single click. The PDF Export feature ensures that your resume is formatted professionally and ready to be shared or printed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Dynamic Updates
+Easily update and rearrange your resume sections with drag-and-drop functionality. The dynamic updates feature allows you to customize the order and content of your resume sections effortlessly.
 
-## Deploy on Vercel
+## Professional Summary
+Generate a compelling professional summary with AI assistance. The Professional Summary feature helps you create a concise and impactful summary that highlights your skills and experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Fork the Project
+Create your Feature Branch
+```sh
+ git checkout -b feature/AmazingFeature
+```
+Commit your Changes 
+```sh 
+git commit -m 'Add some AmazingFeature'
+```
+Push to the Branch 
+```sh
+git push origin feature/AmazingFeature
+```
+Open a Pull Request
+
+License
+```sh
+Distributed under the MIT License. See LICENSE for more information.
+```
