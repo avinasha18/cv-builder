@@ -30,7 +30,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/resume-builder-summarizer.git
+   git clone https://github.com/avinasha18/cv-builder.git
 
 Navigate to the project directory:
 
@@ -42,6 +42,12 @@ Install the dependencies:
   ```sh
   npm install
   ```
+
+Create a .env file in root directory
+```sh
+  OPENAI_API_KEY = 'YOUR-API-KEY'
+```
+
 Running the Application
 Start the development server:
 
