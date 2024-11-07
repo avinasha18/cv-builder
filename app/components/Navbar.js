@@ -18,7 +18,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex items-center space-x-4">
-            <NavLink href="/home" icon={<Award className="w-5 h-5" />} text="CV Summary" active={pathname === '/'} />
+            <NavLink href="/home" icon={<Award className="w-5 h-5" />} text="CV Summary" active={pathname === '/home'} />
             <NavLink href="/resume" icon={<FileText className="w-5 h-5" />} text="Resume Builder" active={pathname === '/resume'} />
           </div>
         </div>
