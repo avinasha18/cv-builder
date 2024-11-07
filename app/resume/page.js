@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ResumeEditor from './resumeEditor';
 import ResumePreview from './resumePreview';
 import { DragDropContext } from 'react-beautiful-dnd';
-import Navbar from '../components/Navbar/page';
+import Navbar from '../components/Navbar';
 
 const initialData = {
   experience: [

@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Loader2, RefreshCw, Star, ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import Navbar from '../Navbar/page';
-import VoiceInput from '../VoiceInput/page';
+import Navbar from './Navbar';
+import VoiceInput from './VoiceInput';
 // Dynamically import the PDF functionality to avoid SSR issues
-const PDFDownloader = dynamic(() => import('../PDFDownloader/page'), {
+const PDFDownloader = dynamic(() => import('./PDFDownloader'), {
   ssr: false
 });
 

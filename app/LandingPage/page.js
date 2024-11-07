@@ -1,11 +1,9 @@
-// components/LandingPage.js
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { FileText, Lightbulb, Mic, Download, RefreshCw, ArrowRight } from 'lucide-react';
-import Navbar from '../components/Navbar/page';
-
+import Navbar from '../components/Navbar';
 const Feature = ({ icon, title, description, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
@@ -27,7 +25,6 @@ const Feature = ({ icon, title, description, index }) => (
 const LandingPage = () => {
   const router = useRouter();
 
-  // Ensure `handleClick` runs client-side only
   const handleClick = (path) => {
     router.push(path);
   };

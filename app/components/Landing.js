@@ -1,9 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
-import { FaFileAlt, FaLightbulb, FaMicrophone, FaDownload, FaRefresh, FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../Navbar/page';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import {
+  FaFileAlt,
+  FaLightbulb,
+  FaMicrophone,
+  FaDownload,
+  FaSyncAlt,
+  FaArrowRight,
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Feature = ({ icon, title, description, index }) => {
   return (
@@ -56,7 +63,7 @@ const LandingPage = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => handleClick('/resume')}
+            onClick={() => handleClick("/resume")}
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
           >
             Build Resume
@@ -64,7 +71,7 @@ const LandingPage = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => handleClick('/summarizer')}
+            onClick={() => handleClick("/summarizer")}
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
           >
             Generate Summary
@@ -100,11 +107,12 @@ const LandingPage = () => {
             index={3}
           />
           <Feature
-            icon={<FaRefresh />}
+            icon={<FaSyncAlt />}
             title="Dynamic Updates"
             description="Easily update and rearrange your resume sections with drag-and-drop functionality."
             index={4}
           />
+
           <Feature
             icon={<FaArrowRight />}
             title="Professional Summary"
