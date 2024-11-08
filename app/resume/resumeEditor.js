@@ -89,7 +89,6 @@ const ResumeEditor = ({
 
       const data = await response.json();
 
-// Remove the first occurrence of "Revised:" if it exists at the start
 const trimmedData = data.enhancedText.startsWith("Revised:") ? data.enhancedText.slice(8).trim() : data.enhancedText;
 
 console.log(trimmedData);

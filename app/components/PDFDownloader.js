@@ -12,7 +12,6 @@ const PDFDownloader=({ content, fileName }) => {
       const page = pdfDoc.addPage();
       const { width, height } = page.getSize();
 
-      // Add background
       page.drawRectangle({
         x: 0,
         y: 0,
@@ -21,7 +20,6 @@ const PDFDownloader=({ content, fileName }) => {
         color: rgb(0.93, 0.96, 1),
       });
 
-      // Add content
       page.drawText(content, {
         x: 50,
         y: height - 100,

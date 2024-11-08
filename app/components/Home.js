@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Navbar from './Navbar';
 import VoiceInput from './VoiceInput';
-// Dynamically import the PDF functionality to avoid SSR issues
 const PDFDownloader = dynamic(() => import('./PDFDownloader'), {
   ssr: false
 });
@@ -21,10 +20,10 @@ const fields = {
 
 const formVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { 
+    transition: {
       staggerChildren: 0.1,
       when: "beforeChildren"
     }
@@ -49,8 +48,8 @@ function HomeContent() {
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(1);
   const [generatedSummary, setGeneratedSummary] = useState('');
+  const [error, setError] = useState('');
 
-  // Handle hydration mismatch by only rendering after mount
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -59,10 +58,21 @@ function HomeContent() {
     return null;
   }
 
+  const areAllFieldsFilled = () => {
+    return Object.values(formData).every(value => value.trim() !== '');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!areAllFieldsFilled()) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    setError('');
     setIsLoading(true);
-  
+
     try {
       const response = await fetch('/api/generate-summary', {
         method: 'POST',
@@ -71,11 +81,11 @@ function HomeContent() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
-  
+
       const data = await response.json();
       setGeneratedSummary(data.summary);
       setStep(2);
@@ -85,11 +95,11 @@ function HomeContent() {
       setIsLoading(false);
     }
   };
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navbar />
-      
+
       <main className="pt-24 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -149,6 +159,12 @@ function HomeContent() {
                     </motion.div>
                   ))}
 
+                  {error && (
+                    <div className="text-red-500 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -200,7 +216,7 @@ function HomeContent() {
                     <span>Generate Another</span>
                   </motion.button>
 
-                  <PDFDownloader 
+                  <PDFDownloader
                     content={generatedSummary}
                     fileName={`${formData.name.replace(/\s+/g, '_')}_CV_Summary`}
                   />
